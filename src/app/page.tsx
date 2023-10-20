@@ -1,96 +1,77 @@
-import { Account } from '../components/Account'
-import { Balance } from '../components/Balance'
-import { BlockNumber } from '../components/BlockNumber'
-import { ConnectButton } from '../components/ConnectButton'
-import { Connected } from '../components/Connected'
-import { NetworkSwitcher } from '../components/NetworkSwitcher'
-import { ReadContract } from '../components/ReadContract'
-import { ReadContracts } from '../components/ReadContracts'
-import { ReadContractsInfinite } from '../components/ReadContractsInfinite'
-import { SendTransaction } from '../components/SendTransaction'
-import { SendTransactionPrepared } from '../components/SendTransactionPrepared'
-import { SignMessage } from '../components/SignMessage'
-import { SignTypedData } from '../components/SignTypedData'
-import { Token } from '../components/Token'
-import { WatchContractEvents } from '../components/WatchContractEvents'
-import { WatchPendingTransactions } from '../components/WatchPendingTransactions'
-import { WriteContract } from '../components/WriteContract'
-import { WriteContractPrepared } from '../components/WriteContractPrepared'
+import React from 'react';
+import { Box, Card, CardContent, Typography, Button, FormControl, InputLabel, OutlinedInput, InputAdornment } from '@mui/material';
+import LockIcon from '@mui/icons-material/Lock';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export function Page() {
   return (
-    <>
-      <h1>wagmi + RainbowKit + Next.js</h1>
-
+    <>  <Box sx={{ position: 'absolute', top: '10px', right: '10px' }}>
       <ConnectButton />
+    </Box>
+      <Typography variant="h1" margin-top="60px" component="div" align="center" fontWeight="bold" sx={{ mt: 8 }}>
+        Crondex
+      </Typography >
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingTop: '60px'
+        }}
+      >
+        <Card>
+          <CardContent>
 
-      <Connected>
-        <hr />
-        <h2>Network</h2>
-        <NetworkSwitcher />
-        <br />
-        <hr />
-        <h2>Account</h2>
-        <Account />
-        <br />
-        <hr />
-        <h2>Balance</h2>
-        <Balance />
-        <br />
-        <hr />
-        <h2>Block Number</h2>
-        <BlockNumber />
-        <br />
-        <hr />
-        <h2>Read Contract</h2>
-        <ReadContract />
-        <br />
-        <hr />
-        <h2>Read Contracts</h2>
-        <ReadContracts />
-        <br />
-        <hr />
-        <h2>Read Contracts Infinite</h2>
-        <ReadContractsInfinite />
-        <br />
-        <hr />
-        <h2>Send Transaction</h2>
-        <SendTransaction />
-        <br />
-        <hr />
-        <h2>Send Transaction (Prepared)</h2>
-        <SendTransactionPrepared />
-        <br />
-        <hr />
-        <h2>Sign Message</h2>
-        <SignMessage />
-        <br />
-        <hr />
-        <h2>Sign Typed Data</h2>
-        <SignTypedData />
-        <br />
-        <hr />
-        <h2>Token</h2>
-        <Token />
-        <br />
-        <hr />
-        <h2>Watch Contract Events</h2>
-        <WatchContractEvents />
-        <br />
-        <hr />
-        <h2>Watch Pending Transactions</h2>
-        <WatchPendingTransactions />
-        <br />
-        <hr />
-        <h2>Write Contract</h2>
-        <WriteContract />
-        <br />
-        <hr />
-        <h2>Write Contract (Prepared)</h2>
-        <WriteContractPrepared />
-      </Connected>
-    </>
-  )
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                mt: 2,
+                gap: 4,
+              }}
+            >
+              <Box>
+                <Typography variant="h3" fontWeight="bold">Cross Chain Vault</Typography>
+              </Box>
+              <Box>
+                <Typography variant="body1" fontWeight="bold">The best cross chain yeilds in DeFi with a single click</Typography>
+              </Box>
+              <Box>
+                <Typography variant="body1" fontWeight="bold">TVL: $50k</Typography>
+              </Box>
+              <Box>
+                <Typography variant="body1" fontWeight="bold">Yield: 12%</Typography>
+              </Box>
+              <Box>
+                <Typography variant="body1" fontWeight="bold">Deposit Cap: 50k</Typography>
+              </Box>
+              <FormControl fullWidth sx={{ m: 1 }}>
+                <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-amount"
+                  startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                  label="Amount"
+                />
+              </FormControl>
+
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  mt: 4,
+                  gap: 1,
+                }}
+              >
+                <Button variant="contained">Approve</Button>
+                <Button variant="contained">Deposit</Button>
+              </Box>
+            </Box>
+          </CardContent>
+        </Card>
+      </Box ></>
+  );
 }
 
-export default Page
+export default Page;
