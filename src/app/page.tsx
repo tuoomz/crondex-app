@@ -3,7 +3,7 @@ import { Box, Card, CardContent, Typography, Button, FormControl, InputLabel, Ou
 import LockIcon from '@mui/icons-material/Lock';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
-export function Page() {
+const Page = () => {
   return (
     <>  <Box sx={{ position: 'absolute', top: '10px', right: '10px' }}>
       <ConnectButton />
