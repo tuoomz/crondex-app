@@ -70,11 +70,11 @@ const Page = () => {
         functionName: "withdraw",
         enabled: true,
         args: [
-            BigInt(9 * 10 ** 18),
-            BigInt(2 * 10 ** 16),
-            BigInt(2 * 10 ** 16),
+            BigInt(amount * 10 ** 18),
+            BigInt(2 * 10 ** 15),
+            BigInt(2 * 10 ** 15),
         ],
-        value: BigInt(2 * 10 ** 16),
+        value: BigInt(2 * 10 ** 15),
     });
     const { write: writeWithdraw, data: dataWithdraw } =
         useContractWrite(configWithdraw);
@@ -98,26 +98,21 @@ const Page = () => {
 
     return (
         <>
-            {" "}
             <Box sx={{ position: "absolute", top: "10px", right: "10px" }}>
                 <ConnectButton />
             </Box>
-            <Typography
-                variant="h1"
-                margin-top="60px"
-                component="div"
-                align="center"
-                fontWeight="bold"
-                sx={{ mt: 8 }}
-            >
-                Crondex
+            <Typography align="center" pb={-20}>
+                <img
+                    src="https://cdn.discordapp.com/attachments/1159043590522155060/1165512267798958110/crondex_3.png?ex=65471ee2&is=6534a9e2&hm=afc5246ef4a7d00898a4e5d39b95c551e350cc0f180d4a7489523502421e371d&"
+                    width={200}
+                    height={200}
+                />
             </Typography>
             <Box
                 sx={{
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    paddingTop: "60px",
                 }}
             >
                 <Card>
